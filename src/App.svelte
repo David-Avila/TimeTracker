@@ -53,7 +53,7 @@
     <style>
     :root{
       --fontClr: #1c2227;
-      --otherClr: #7b7d67;
+      --otherClr: #212738;
       --accentColor: #495159;
       --mainColor: #ff8552;
       --middleClr: #f1ffc4;
@@ -68,7 +68,7 @@
     <div class="header">
       <h1 >Time Tracker</h1>
       <div class="ss">
-        <input type="text" maxlength="38" bind:value={cont}>
+        <input placeholder="38 characters max" type="text" maxlength="38" bind:value={cont}>
         <button on:click={addTimer}>Add Tracker</button> 
       </div>
     </div>
@@ -90,7 +90,7 @@
   align-items: center;
   justify-content: center;
 
-  background-color: var(--middleClr);
+  background-color: var(--accentColor);
 }
 
 .frame{
@@ -105,8 +105,7 @@
 
   border-radius: 20px;
   border:4px solid var(--accentColor);
-  background-color: var(--middleClr);
-  filter: drop-shadow(0 0 32px var(--accentColor));
+  background-color: inherit; 
 }
 
 button,
@@ -116,7 +115,7 @@ input{
   font-weight: 700;
   width: fit-content;
   border: 2px solid var(--fontClr);
-  background-color: var(--accentColor);
+  background-color: var(--middleClr);
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 0px var(--accentColor);
 }
@@ -135,13 +134,13 @@ input{
   height: fit-content;
   width: 100%;
   text-align: center;
-  border-radius: 15px 15px 0 0;
+  border-radius: 15px;
   padding-bottom: 20px;
   border:none;
   border-bottom: 4px solid var(--accentColor);
 
-  background-color: var(--mainColor);
-  color: var(--fontClr);
+  background-color: var(--otherClr);
+  color: var(--middleClr);
 }
 
 .container{

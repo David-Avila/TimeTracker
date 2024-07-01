@@ -41,38 +41,41 @@
   }
 </script>
 
-<main class="timer">
-  <div class="div1">
-    <h3>{data.title}</h3>
-    <h3 class="time">{data.hours + ":" + data.minutes + ":" + 
-      data.seconds + (data.milisecs < 10 ? ":0" : ":") + data.milisecs}</h3>
-  </div>
-  <div class="btns">
-  <button on:click={btnClicked}>{running ? "Pause" : "Start"}</button>
-    <button class="danger"
-      on:click={() => {
-        stop();
-        remove(data.id);
-      }}
-    >Delete</button>
+<main >
+  <div class="timer">
+    <div class="div1">
+      <h3>{data.title}</h3>
+      <h3 class="time">{data.hours + ":" + data.minutes + ":" + 
+        data.seconds + (data.milisecs < 10 ? ":0" : ":") + data.milisecs}</h3>
+    </div>
+    <div class="btns">
+      <button on:click={btnClicked}>{running ? "Pause" : "Start"}</button>
+      <button class="danger"
+        on:click={() => {
+          stop();
+          remove(data.id);
+        }}
+      >Delete</button>
+    </div>
   </div>
 </main>
 
 <style>
 .timer{
+  min-width: 360px;
   width: min(95%, 360px);
   height: 120px;
   color: black;
-  border: 2px solid var(--accentColor);
+  border: 2px solid var(--fontClr);
   border-radius: 25px;
 
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  flex-flow: row wrap;
+  flex-flow: row nowrap;
 
-  color: var(--fontClr);
-  background-color: (--otherClr);
+  color: var(--middleClr);
+  background: var(--otherClr);
 }
 
 .div1{
@@ -111,7 +114,7 @@ button{
   width: 84px;
   font-weight: 700;
   border: 2px solid var(--fontClr);
-  background-color: var(--accentColor);
+  background-color: var(--middleClr);
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 0px var(--accentColor);
 }
